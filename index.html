@@ -13,13 +13,31 @@
     <div class="wrapper">
         <div class="container">
             <div class="block-one">
-                <p>Block for fun</p>
+
                 <div id="app"> {{message}} </div>
+                <div id="app2"><span v-bind:title="message">
+                    проверка динамического связывани при наведении курсора на блок
+                </span></div>
                 <label for="name"> Name: </label>
                     <input type="text" id="name" name="name">
                     <button>Это кнопка</button>
             </div>
         </div>
+    </div>
+    <div id="app-3">
+        <span v-if="seen">Сейчас меня видно</span>
+      </div>
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{todo.text}}
+            </li>
+        </ol>
+    </div>
+    <div id="app-5">
+        <p>{{messageRev}}</p>
+        <button v-on:click="reverseMessage">Переверни меня</button>
+        <button v-on:click="changeCol">Замена цвета</button>
     </div>
     <script src="./main.js"></script>
 </body>

@@ -4,11 +4,14 @@
 
 .wrapper {
   max-width: 1280px;
-  background-color: burlywood;
 }
 
 .block-one {
+  font-weight: 600;
+  margin: 0 auto;
   width: 400px;
   height: 200px;
-}
-/*# sourceMappingURL=test.css.map */
+  border: 2px solid #e9681e;
+  border-radius: 18px;
+  background-color: #f74e81;
+}/*# sourceMappingURL=test.css.map */
