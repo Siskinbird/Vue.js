@@ -1,0 +1,14 @@
+.container {
+  margin: 0 auto;
+}
+
+.wrapper {
+  max-width: 1280px;
+  background-color: burlywood;
+}
+
+.block-one {
+  width: 400px;
+  height: 200px;
+}
+/*# sourceMappingURL=test.css.map */
