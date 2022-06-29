@@ -41,3 +41,9 @@ let app3 = new Vue({
         }
     }
   })
+  let app6 = new Vue({
+    el: '#app-6',
+    data: {
+        checkMessage: "Проверь меня сученька"
+    }
+  })
