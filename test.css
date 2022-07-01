@@ -15,3 +15,12 @@
   border-radius: 18px;
   background-color: #f74e81;
 }/*# sourceMappingURL=test.css.map */
+
+.block-two {
+ padding: 60px;
+ text-align: center;
+ border: 2px solid #e97d11;
+ border-radius: 18px;
+ margin-top: 80px;
+}
+ 
