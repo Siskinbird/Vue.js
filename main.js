@@ -1,16 +1,29 @@
-let app = new Vue({
-    el: '#app',
+let vm = new Vue({
+    el: '#exemple',
     data: {
-        message: "Hello VUE"
+        message: 'Привет'
+    },
+    computed: {
+        reversedMessage: function () {
+            return this.message.split('').reverse().join('')
+        }
     }
 })
 
-let app2 = new Vue({
-    el: '#app2',
+let nvm = new Vue({
+    el: '#demo',
     data: {
-        message: "Page load at" + new Date().toLocaleString()
+        firstName: 'Dmitry',
+        lastName: 'Chizhov'
+    },
+    computed: {
+        fullName: function () {
+            return this.firstName + ' ' + this.lastName;
+        }
     }
 })
+
+
 
 let app3 = new Vue({
     el: '#app-3',
@@ -47,3 +60,4 @@ let app3 = new Vue({
         checkMessage: "Проверь меня сученька"
     }
   })
+

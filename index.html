@@ -13,11 +13,6 @@
     <div class="wrapper">
         <div class="container">
             <div class="block-one">
-
-                <div id="app"> {{message}} </div>
-                <div id="app2"><span v-bind:title="message">
-                    проверка динамического связывани при наведении курсора на блок
-                </span></div>
                 <label for="name"> Name: </label>
                     <input type="text" id="name" name="name">
                     <button>Это кнопка</button>
@@ -44,6 +39,14 @@
         <button v-on:click="reverseMessage">Переверни меня</button>
         <button v-on:click="changeCol">Замена цвета</button>
     </div>
+
+    <div id="exemple">
+        <p>Изначальное сообщение: {{ message }}</p>
+        <p>Перевернутое сообщение:{{ reversedMessage }} </p>
+    </div>
+
+    <div id="demo"> {{ fullName }}</div>
+
     <script src="./main.js"></script>
 </body>
 </html>
