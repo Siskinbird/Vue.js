@@ -1,63 +1,31 @@
-let vm = new Vue({
-    el: '#exemple',
+let watchExampleVM = new Vue({
+    el: '#watch-example',
     data: {
-        message: 'Привет'
+        question: '',
+        answer: 'Until you ask a question, I can not answer!'
     },
-    computed: {
-        reversedMessage: function () {
-            return this.message.split('').reverse().join('')
+    watch: {
+        question: function (newQuestion, oldQuestion) {
+            this.answer = 'Waiting for you to finish typing...'
+            this.debouncedGetAnswer()
         }
-    }
-})
-
-let nvm = new Vue({
-    el: '#demo',
-    data: {
-        firstName: 'Dmitry',
-        lastName: 'Chizhov'
     },
-    computed: {
-        fullName: function () {
-            return this.firstName + ' ' + this.lastName;
-        }
-    }
-})
-
-
-
-let app3 = new Vue({
-    el: '#app-3',
-    data: {
-      seen: true
-    }
-  })
-
-  let app4 = new Vue({
-    el: '#app-4',
-    data: {
-        todos: [
-            {text: "Интересно"}, 
-            {text: "Что из этого выйдет"},
-            {text: "Выглядит довольно просто"},
-            {text: "Думаю я справлюсь с этим дерьмом"}
-        ]
-    }
-  })
-  let app5 = new Vue({
-    el: '#app-5',
-    data: {
-        messageRev: 'Вот это мы перевернули',
+    created: function () {
+        this.debouncedGetAnswer = _.debounce(this.getAnswer, 500)
     },
     methods: {
-        reverseMessage: function () {
-            this.messageRev = this.messageRev.split('').reverse().join('')
+        getAnswer: function () {
+            if(this.question.indexOf('?') === -1) {
+                this.answer = 'Questions usually end with a question mark. ;-)'
+                return
+            }
+            this.answer = 'Think...'
+            let vm = this
+            axios.get('https://yesno.wtf/api').then(function(response) {
+                vm.answer = _.capitalize(response.data.answer)
+            }).catch(function (error) {
+                vm.answer = 'Error! Can not contact API. ' + error 
+            })
         }
     }
-  })
-  let app6 = new Vue({
-    el: '#app-6',
-    data: {
-        checkMessage: "Проверь меня сученька"
-    }
-  })
-
+})

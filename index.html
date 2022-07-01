@@ -6,47 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="test.css">
     
-    <title>Document</title>
+    <title>Test question api</title>
 </head>
 <body>
+    <!-- Import axios min -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <!-- Import lodash min -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <div class="wrapper">
         <div class="container">
             <div class="block-one">
-                <label for="name"> Name: </label>
-                    <input type="text" id="name" name="name">
-                    <button>Это кнопка</button>
-                <label for="checking">Check it: </label>
-                <div id="app-6">
-                    <p>{{checkMessage}}</p>
-                    <input id="checking" v-model="checkMessage">
+                <div id="watch-example">
+                    <p>
+                        Ask a question that can be answered "yes" or "no":
+                        <input v-model="question">
+                    </p>
+                    <p>{{ answer }}</p>
                 </div>
             </div>
         </div>
     </div>
-    <div id="app-3">
-        <span v-if="seen">Сейчас меня видно</span>
-      </div>
-    <div id="app-4">
-        <ol>
-            <li v-for="todo in todos">
-                {{todo.text}}
-            </li>
-        </ol>
-    </div>
-    <div id="app-5">
-        <p>{{messageRev}}</p>
-        <button v-on:click="reverseMessage">Переверни меня</button>
-        <button v-on:click="changeCol">Замена цвета</button>
-    </div>
-
-    <div id="exemple">
-        <p>Изначальное сообщение: {{ message }}</p>
-        <p>Перевернутое сообщение:{{ reversedMessage }} </p>
-    </div>
-
-    <div id="demo"> {{ fullName }}</div>
-
     <script src="./main.js"></script>
 </body>
 </html>
