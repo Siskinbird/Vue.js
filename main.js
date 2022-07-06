@@ -119,3 +119,15 @@ new Vue({
         trying: '<div class="con">Hello im parent<div class="child">Im child and link <a href="dmich.ru">link</a></div><ul><li>Check</li><li>Check two</li><li>Check three</li></ul></div>'
     }
 })
+
+new Vue({
+    el: '#navigation',
+    data: {
+        active: 'home'
+    },
+    methods: {
+        makeActive: function(item) {
+            this.active = item;
+        }
+    }
+})

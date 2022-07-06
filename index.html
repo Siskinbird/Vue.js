@@ -64,6 +64,15 @@
             <div id="tryHtml">
                 <div v-html="trying"></div>
             </div>
+            <div id="navigation">
+                <nav v-bind:class="active" v-on:click.prevent>
+                    <a href="#" class="home" v-on:click="makeActive('home')">Главная</a>
+                    <a href="#" class="about" v-on:click="makeActive('about')">О компании</a>
+                    <a href="#" class="catalog" v-on:click="makeActive('catalog')">Каталог</a>
+                    <a href="#" class="contacts" v-on:click="makeActive('contacts')">Контакты</a>
+                </nav>
+                <p>Выбран класс <b>{{active}}</b></p>
+            </div>
         </div>
     </div>
     <script src="./main.js"></script>
