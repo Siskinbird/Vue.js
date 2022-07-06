@@ -131,3 +131,47 @@ new Vue({
         }
     }
 })
+
+Vue.filter('currency', function (value) {
+    return '$' + value.toFixed(2);
+});
+
+new Vue({
+    el: '#demo',
+    data: {
+        services: [
+        	{
+        		name: 'Веб разработка',
+        		price: 300,
+        		active1:true
+        	},{
+        		name: 'Дизайн',
+        		price: 400,
+        		active1:false
+        	},{
+        		name: 'Интеграция',
+        		price: 250,
+        		active1:false
+        	},{
+        		name: 'Обучение',
+        		price: 220,
+        		active1:false
+        	}
+        ]
+    },
+    methods: {
+        toggleActive: function(s) {
+            s.active1 = !s.active1;
+        },
+        total: function() {
+            var total = 0;
+            this.services.forEach(function(s) {
+                if(s.active1) {
+                    total += s.price;
+                }
+            })
+            return total;
+        }
+    }
+    
+})

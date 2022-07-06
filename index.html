@@ -73,6 +73,15 @@
                 </nav>
                 <p>Выбран класс <b>{{active}}</b></p>
             </div>
+            <form id="demo">
+                <h1>Services</h1>
+                <ul>
+                    <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:class="{'active1':service.active1}">{{service.name}} <span>{{service.price | currency}}</span></li>
+                </ul>
+                <div class="total">
+                    Total: <span>{{total() | currency}}</span>
+                </div>
+            </form>
         </div>
     </div>
     <script src="./main.js"></script>
