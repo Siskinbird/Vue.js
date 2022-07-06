@@ -48,3 +48,130 @@ new Vue({
         }
     }
 });
+
+new Vue({
+    el: "#nav",
+    data: {
+        link: 'https://metaform.ru/',
+        markup: '<a href="https://metaform.ru">Metaform</a>',
+        name: 'Dmitry'
+    }
+})
+
+new Vue({
+    el: "#list",
+    data: {
+        presidents: [
+            {
+                name: 'Boris Eltcin',
+                stillAlive: false
+            },
+            {
+                name: 'Vladimir Putin',
+                stillAlive: true
+            },
+            {
+                name: "Lincoln",
+                sttillAlive: false
+            },
+            {
+                name: 'Nikson',
+                stillAlive: false
+            },
+            {
+                name: 'Biden',
+                stillAlive: true
+            },
+            {
+                name: "Trump",
+                stillAlive: true
+            }
+        ]
+    }
+})
+
+new Vue({
+    el: '#inMessage',
+    data: {
+        message: 'Try to change message on input',
+        one: 'This second message',
+        two: 'This is three message',
+        fohr: "Im just try"
+    },
+    methods: {
+        setMessage: function(event) {
+            this.message = event.target.value;
+        }
+    }
+
+})
+
+new Vue({
+    el: '#checkNum',
+    data: {
+        check: 67
+    }
+})
+
+new Vue({
+    el: '#tryHtml',
+    data: {
+        trying: '<div class="con">Hello im parent<div class="child">Im child and link <a href="dmich.ru">link</a></div><ul><li>Check</li><li>Check two</li><li>Check three</li></ul></div>'
+    }
+})
+
+new Vue({
+    el: '#navigation',
+    data: {
+        active: 'home'
+    },
+    methods: {
+        makeActive: function(item) {
+            this.active = item;
+        }
+    }
+})
+
+Vue.filter('currency', function (value) {
+    return '$' + value.toFixed(2);
+});
+
+new Vue({
+    el: '#demo',
+    data: {
+        services: [
+        	{
+        		name: 'Веб разработка',
+        		price: 300,
+        		active1:true
+        	},{
+        		name: 'Дизайн',
+        		price: 400,
+        		active1:false
+        	},{
+        		name: 'Интеграция',
+        		price: 250,
+        		active1:false
+        	},{
+        		name: 'Обучение',
+        		price: 220,
+        		active1:false
+        	}
+        ]
+    },
+    methods: {
+        toggleActive: function(s) {
+            s.active1 = !s.active1;
+        },
+        total: function() {
+            var total = 0;
+            this.services.forEach(function(s) {
+                if(s.active1) {
+                    total += s.price;
+                }
+            })
+            return total;
+        }
+    }
+    
+})

@@ -41,6 +41,48 @@
                </div>
             </div>
         </div>
+        <div class="container">
+            <div id="nav">
+                <input type="text" :value="name">
+                <a :href="link">Metaform</a>
+                <div v-html="markup"></div>
+            </div>
+            <div id="list">
+                <ul>
+                    <li v-for="president in presidents" v-bind:class="{'strike':!president.stillAlive}">{{president.name}}</li>
+                </ul>
+            </div>
+            <div id="inMessage">
+                <input type="text" v-on:input="setMessage">
+                <p>{{message}}</p>
+                <p>{{fohr}}</p>
+                <p>{{two}}</p>
+            </div>
+            <div id="checkNum">
+                <p>{{check > 66 ? 'Число больше 66' : 'Число меньше 66'}}</p>
+            </div>
+            <div id="tryHtml">
+                <div v-html="trying"></div>
+            </div>
+            <div id="navigation">
+                <nav v-bind:class="active" v-on:click.prevent>
+                    <a href="#" class="home" v-on:click="makeActive('home')">Главная</a>
+                    <a href="#" class="about" v-on:click="makeActive('about')">О компании</a>
+                    <a href="#" class="catalog" v-on:click="makeActive('catalog')">Каталог</a>
+                    <a href="#" class="contacts" v-on:click="makeActive('contacts')">Контакты</a>
+                </nav>
+                <p>Выбран класс <b>{{active}}</b></p>
+            </div>
+            <form id="demo">
+                <h1>Services</h1>
+                <ul>
+                    <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:class="{'active1':service.active1}">{{service.name}} <span>{{service.price | currency}}</span></li>
+                </ul>
+                <div class="total">
+                    Total: <span>{{total() | currency}}</span>
+                </div>
+            </form>
+        </div>
     </div>
     <script src="./main.js"></script>
 </body>
