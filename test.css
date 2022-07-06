@@ -4,6 +4,7 @@
 
 .wrapper {
   max-width: 1280px;
+  margin: 0 auto;
 }
 
 .block-one {
@@ -22,5 +23,8 @@
  border: 2px solid #e97d11;
  border-radius: 18px;
  margin-top: 80px;
+}
+.strike {
+  text-decoration: line-through;
 }
  

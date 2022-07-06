@@ -48,3 +48,44 @@ new Vue({
         }
     }
 });
+
+new Vue({
+    el: "#nav",
+    data: {
+        link: 'https://metaform.ru/',
+        markup: '<a href="https://metaform.ru">Metaform</a>',
+        name: 'Dmitry'
+    }
+})
+
+new Vue({
+    el: "#list",
+    data: {
+        presidents: [
+            {
+                name: 'Boris Eltcin',
+                stillAlive: false
+            },
+            {
+                name: 'Vladimir Putin',
+                stillAlive: true
+            },
+            {
+                name: "Lincoln",
+                sttillAlive: false
+            },
+            {
+                name: 'Nikson',
+                stillAlive: false
+            },
+            {
+                name: 'Biden',
+                stillAlive: true
+            },
+            {
+                name: "Trump",
+                stillAlive: true
+            }
+        ]
+    }
+})

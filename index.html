@@ -41,6 +41,18 @@
                </div>
             </div>
         </div>
+        <div class="container">
+            <div id="nav">
+                <input type="text" :value="name">
+                <a :href="link">Metaform</a>
+                <div v-html="markup"></div>
+            </div>
+            <div id="list">
+                <ul>
+                    <li v-for="president in presidents" v-bind:class="{'strike':!president.stillAlive}">{{president.name}}</li>
+                </ul>
+            </div>
+        </div>
     </div>
     <script src="./main.js"></script>
 </body>
