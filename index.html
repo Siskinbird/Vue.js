@@ -52,6 +52,18 @@
                     <li v-for="president in presidents" v-bind:class="{'strike':!president.stillAlive}">{{president.name}}</li>
                 </ul>
             </div>
+            <div id="inMessage">
+                <input type="text" v-on:input="setMessage">
+                <p>{{message}}</p>
+                <p>{{fohr}}</p>
+                <p>{{two}}</p>
+            </div>
+            <div id="checkNum">
+                <p>{{check > 66 ? 'Число больше 66' : 'Число меньше 66'}}</p>
+            </div>
+            <div id="tryHtml">
+                <div v-html="trying"></div>
+            </div>
         </div>
     </div>
     <script src="./main.js"></script>

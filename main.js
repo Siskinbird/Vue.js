@@ -89,3 +89,33 @@ new Vue({
         ]
     }
 })
+
+new Vue({
+    el: '#inMessage',
+    data: {
+        message: 'Try to change message on input',
+        one: 'This second message',
+        two: 'This is three message',
+        fohr: "Im just try"
+    },
+    methods: {
+        setMessage: function(event) {
+            this.message = event.target.value;
+        }
+    }
+
+})
+
+new Vue({
+    el: '#checkNum',
+    data: {
+        check: 67
+    }
+})
+
+new Vue({
+    el: '#tryHtml',
+    data: {
+        trying: '<div class="con">Hello im parent<div class="child">Im child and link <a href="dmich.ru">link</a></div><ul><li>Check</li><li>Check two</li><li>Check three</li></ul></div>'
+    }
+})
