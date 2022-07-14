@@ -1,10 +1,14 @@
 Vue.component('click-counter', {
-    template: '<button @click="count++">Click me {{count}}</button>',
+    template: '#click-counter-template',
     data () {
         return {
             count: 0
         }
     }
+})
+
+Vue.component('my-try', {
+    template: '#my-test-component'
 })
 
 new Vue({

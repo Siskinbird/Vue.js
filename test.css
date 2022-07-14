@@ -172,3 +172,11 @@ div.total{
 div.total span{
 	float:right;
 }
+
+.red {
+	width: 150px;
+	height: 150px;
+	border-radius: 18px;
+	background-color: #61a1bc;
+	margin: 0 auto;
+}

@@ -85,7 +85,21 @@
             <div id="components">
                 <click-counter></click-counter>
                 <click-counter></click-counter>
+                <my-try></my-try>
+                <my-try></my-try>
+                <my-try></my-try>
             </div>
+            <script type="text/x-template" id="click-counter-template">
+                <button @click="count++">Click me {{count}}</button>
+            </script>
+            <script type="text/x-template" id="my-test-component">
+                <div>
+                    <h1>Hello world? im firs component</h1>
+                    <h2>Woow? its work!</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, esse?</p>
+                    <div class='red'>Im red squerl</div>
+                </div>
+            </script>
         </div>
     </div>
     <script src="./main.js"></script>
